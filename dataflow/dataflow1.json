@@ -12,21 +12,13 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [
-				{
-					"linkedService": {
-						"referenceName": "AzureBlobStorage2",
-						"type": "LinkedServiceReference"
-					},
-					"name": "sink1"
-				}
-			],
+			"sinks": [],
 			"transformations": [
 				{
 					"name": "DerivedColumn1"
 				}
 			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tentity: '',\n\tformat: 'cdm',\n\tcorpusPath: '',\n\tfolderPath: '',\n\tfileSystem: '',\n\tcolumnDelimiter: ',',\n\tcolumnNamesAsHeader: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1"
 		}
 	}
 }
