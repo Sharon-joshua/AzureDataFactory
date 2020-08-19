@@ -12,13 +12,21 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText3",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
 			"transformations": [
 				{
 					"name": "DerivedColumn1"
 				}
 			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
