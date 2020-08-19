@@ -16,7 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"url": "https://prod-07.centralindia.logic.azure.com:443/workflows/293418189d424df88ce096c2fda0880e/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=8uHOw2boXLq6JntHuM_6SH1n0Uko4hatxCZfRvrEmXo",
-					"method": "POST"
+					"method": "POST",
+					"body": "there was a failure"
 				}
 			}
 		],
