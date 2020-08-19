@@ -26,7 +26,7 @@
 					"name": "DerivedColumn1"
 				}
 			],
-			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'delta',\n\tcontainer: '1908output',\n\ttruncate: false,\n\tvacuum: 0,\n\tdeletable:false,\n\tinsertable:true,\n\tupdateable:false,\n\tupsertable:false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 100,\n\tformat: 'excel',\n\tcontainer: '1908input',\n\tfileName: 'heart_failure_clinical_records_dataset.xlsx',\n\tsheetName: 'heart_failure_clinical_records_',\n\tfirstRowAsHeader: false) ~> source1\nsource1 derive(GenericName = currentTimestamp()) ~> DerivedColumn1\nDerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tentity: '',\n\tformat: 'cdm',\n\tcorpusPath: '',\n\tfolderPath: '',\n\tfileSystem: '',\n\tcolumnDelimiter: ',',\n\tcolumnNamesAsHeader: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
 		}
 	}
 }
