@@ -1,0 +1,6 @@
+{
+	"name": "send email on failure",
+	"properties": {
+		"annotations": []
+	}
+}
