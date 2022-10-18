@@ -1,0 +1,9 @@
+{
+	"name": "DFLearnS22",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "f3fe3344-d394-4212-959a-244072607634",
+		"tenantId": "0b969896-5f88-445d-a359-d936f893c813"
+	}
+}
