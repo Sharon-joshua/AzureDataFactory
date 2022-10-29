@@ -1,0 +1,19 @@
+{
+	"name": "MetadataDrivenCopyTask_hlb_ControlDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedService1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "MetadataDrivenCopyTask_hlb_20221029"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "control",
+			"table": "MainControlTable_hlb"
+		}
+	}
+}
